@@ -1,0 +1,16 @@
+services:
+  floci:
+    image: floci/floci
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=kinesis
+    volumes:
+      - floci-data:/var/lib/floci
+
+networks:
+  default:
+    name: restaurant-stream-net
+
+volumes:
+  floci-data:
